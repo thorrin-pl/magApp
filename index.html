@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <!-- Basic Page Needs –––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>MagApp</title>
+  <meta name="description" content="Test app. - All rights reserved.">
+  <meta name="author" content="Krzysztof Różański">
+
+  <!-- Mobile Specific Metas ––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT –––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS ––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/material-icons.css">
+	<link rel="stylesheet" href="css/index.css">
+
+  <!-- Favicon ––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+  <!-- Scripts ––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/vue-dev.js"></script>
+	<script src="js/ean.js"></script>
+	
+</head>
+<body>
+<div id="vm" class="grid-container">
+	
+	<div class="body">
+
+		<div class="sidebar">
+			<form v-on:submit="addArticle()">
+				<label for="howAdd">Tryb pracy</label>
+				<select id="howAdd" v-model="howAdding">
+					<option value="addEntered">Dodawaj podane ilości</option>
+					<option value="addOne">Dodawaj po 1 sztuce</option>
+					<option value="noAdd">Nie dodawaj</option>
+				</select>
+
+				<label for="eanInput">EAN</label>
+				<input 
+					type="text" 
+					placeholder="EAN" 
+					v-bind:class="{ inputValid: validEAN }"
+					v-model="eanIn" 
+					v-on:keyup="checkValidEAN"
+					v-on:keydown="inputEanLimit"
+					maxlength="13"
+				>
+
+				<label for="inputQuantity">Ilość</label>
+				<input 
+					type="number" 
+					placeholder="Ilość"
+					ref="inputQuantity"
+					v-model.number="quantityIn" v-on:keyup="checkValid()"
+				>
+
+				<label for="nameInput">Nazwa</label>
+				<input 
+					type="text" 
+					placeholder="Nazwa" 
+					v-model="nameIn"
+				>
+				
+				<input 
+					type="submit" 
+					value="Dodaj" 
+					class="button-primary" 
+					v-on:click.prevent="addArticle()"
+				>
+			</form>
+			<div>
+				<button v-on:click="cleanList()">Wyczyść listę</button>
+
+				<button>Drukuj A4</button>
+
+				<button>Drukuj A6</button>
+
+				<button>Lista zbiorcza</button>
+
+			</div>
+		</div>
+
+		<div class="content">
+
+			<table class="table-articles-list">
+				<thead>
+					<tr>
+						<th>lp</th>
+						<th>EAN</th>
+						<th>Ilość</th>
+						<th>Nazwa</th>
+						<th>Kopie</th>
+						<th>Usuń</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- <tr>
+						<td>123.</td>
+						<td>1234567890123</td>
+						<td><input type="number" value="90000.000" min="0.000" step="0.001"></td>
+						<td><input type="text" value="Nazwa artykułu"></td>
+						<td><input type="number" value="10"></td>
+						<td v-on:click="deleteItem(index)"><i class="material-icons">delete</i></td>
+					</tr> -->
+					<tr v-for="(item, index) in articlesList">
+						<td>
+							{{ index + 1 }}.
+						</td>
+						<td>
+							{{ item.ean }}
+						</td>
+						<td>
+							<input type="number" v-model.number="item.quantity">
+						</td>
+						<td>
+							<input type="text" v-model.number="item.name">
+						</td>
+						<td>
+							<input type="number" v-model.number="item.copies">
+						</td>
+						<td><i class="material-icons" v-on:click="deleteItem(index)">delete</i></td>
+						<!-- <td>
+							<button type="button" class="btn-icon" v-on:click="deleteItem(index)">
+								<i class="material-icons">delete</i>
+							</button>
+						</td> -->
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+	</div>
+	
+</div>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>
