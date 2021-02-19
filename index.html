@@ -77,11 +77,11 @@
 			<div>
 				<button v-on:click="cleanList()">Wyczyść listę</button>
 
-				<button>Drukuj A4</button>
+				<button v-on:click="printLabelsA4()">Drukuj A4</button>
 
-				<button>Drukuj A6</button>
+				<button v-on:click="printLabelsA6()">Drukuj A6</button>
 
-				<button>Lista zbiorcza</button>
+				<button v-on:click="printList()">Lista zbiorcza</button>
 
 			</div>
 		</div>
@@ -140,6 +140,8 @@
 	
 </div>
 
+<script src="js/pdfmake/pdfmake.js"></script>
+<script src="js/pdfmake/vfs_fonts.js"></script>
 <script src="js/index.js"></script>
 
 </body>

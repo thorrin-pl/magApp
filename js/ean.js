@@ -7,6 +7,8 @@ class Ean {
 		this._checksum = null;
 		this._valid = false;
 		this._withNumbers = false;
+		this._zoom = 1;
+		this._height = 0;
   }
 
   toArray(data) {
@@ -175,6 +177,14 @@ class Ean {
 		;
 	}
 
+	set zoom(arg) {
+		this._zoom = arg;
+	}
+
+	set height(arg) {
+		this._height = arg;
+	}
+
 	get getCode() {
 		return this._code;
 	}
@@ -231,7 +241,8 @@ class Ean {
 		let
 			bar = true,
 			result = [],
-			x = 0;
+			x = 0,
+			barHeight = (this._height > 0) ? this._height : (50 * this._zoom);
 		
 		this._code.forEach(
 			(value, index) => {
@@ -239,8 +250,8 @@ class Ean {
 					result.push(
 						{
 							type: 'rect',
-							w: value,
-							h: 50,
+							w: value * this._zoom,
+							h: barHeight,
 							x: x,
 							y: 0,
 							fill: true,
@@ -248,7 +259,7 @@ class Ean {
 						}
 					);
 				}
-				x = x + value;
+				x = x + value * this._zoom;
 				bar = !bar;
 			}
 		);
