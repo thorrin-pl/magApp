@@ -19,7 +19,8 @@ var vm = new Vue({
 		zoomFactor: 1,
 		barHeight: 50,
 		labelContent: {},
-		articlesList: [
+		articlesList: []
+		/*articlesList: [
 			{ ean: 2222222222222, quantity: 2.4, copies: 1, name: 'Vegetables' },
 			{ ean: 4444444444444, quantity: 2.4, copies: 1, name: 'Cheese' },
 			{ ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
@@ -66,25 +67,23 @@ var vm = new Vue({
       { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
       { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
       
-		]
+		]*/
 	},
-	/*filters: {
-		numPL: function(vaule) {
-			if (!vaule) return '';
-			vaule = vaule.toString();
-			return vaule.replace('.', ',');
-		}
-	},*/
 	methods: {
 		logInput: function() {
 			logger(this.articlesList);
 		},
+		scrollToEnd: function() {    	
+      let container = this.$el.querySelector(".content");
+      container.scrollTop = container.scrollHeight;
+    },
 		checkValidEAN: function () {
 			barcode.setEan = this.eanIn;
 			if (barcode.isValid) {
 				this.validEAN= true;
 				if (this.eanIn.length === 13) {
 					this.$refs.inputQuantity.focus();
+					if (this.howAdding === 'addOne') this.addArticle();
 				}
 			} else {
 				this.validEAN = false;
@@ -122,38 +121,42 @@ var vm = new Vue({
 		addArticle: function () {
 			logger('<<< start funkcji addArticle >>>');
 
-			let newAdd = function(q) {
-				vm.articlesList.push(
-					{
-						ean: vm.eanIn,
-						quantity: q ? q : vm.quantityIn,
-						copies: 1,
-						name: vm.nameIn
-					});
-			}
-
-			if ( vm.howAdding != 'noAdd' ) {
-				// Czy istnieje już taki artykuł
-				let i = -1;
-				vm.articlesList.forEach((element, index) => {
-					logger('start forEach dla articlesList');
-					if ( element.ean == vm.eanIn ) {
-						i = index;
-						logger(`Istnieje na liście, index = ${index}`);
-					}
-				});
-
-				if ( i > -1 ) { // jeżeli istnieje
-					vm.articlesList[i].quantity += vm.howAdding == 'addEntered' ? vm.quantityIn : 1;
-				} else { // jeżeli nie istnieje
-					newAdd( vm.howAdding == 'addOne' ? 1 : null );
+			if (this.validEAN) {
+				let newAdd = function(q) {
+					vm.articlesList.push(
+						{
+							ean: vm.eanIn,
+							quantity: q ? q : vm.quantityIn,
+							copies: 1,
+							name: vm.nameIn
+						});
+					vm.scrollToEnd();
 				}
-			} else newAdd(); // bez dodawania
+
+				if ( vm.howAdding != 'noAdd' ) {
+					// Czy istnieje już taki artykuł
+					let i = -1;
+					vm.articlesList.forEach((element, index) => {
+						logger('start forEach dla articlesList');
+						if ( element.ean == vm.eanIn ) {
+							i = index;
+							logger(`Istnieje na liście, index = ${index}`);
+						}
+					});
+
+					if ( i > -1 ) { // jeżeli istnieje
+						vm.articlesList[i].quantity += vm.howAdding == 'addEntered' ? vm.quantityIn : 1;
+					} else { // jeżeli nie istnieje
+						newAdd( vm.howAdding == 'addOne' ? 1 : null );
+					}
+				} else newAdd(); // bez dodawania
+			}
 
 			this.eanIn = "";
 			this.quantityIn = "";
 			this.nameIn = "";
 			this.validEAN = false;
+			this.$refs.inputEan.focus();
 			
 			logger('>>> stop addArticle <<<');
 		},
@@ -193,13 +196,13 @@ var vm = new Vue({
 								},
 								[
 									{
-										text: item.name,
-										style: "name"
-									},
-									{
 										text: (numPL(item.quantity) + " j"),
 										style: "quantity",
 										width: "*"
+									},
+									{
+										text: item.name,
+										style: "name"
 									}
 								]
 							]
@@ -236,12 +239,12 @@ var vm = new Vue({
 						margin: [20, -30, 0, 0]
 					},
 					name: {
-						margin: [5, -50, 20, 0],
+						margin: [0, 0, 20, 0],
 						fontSize: 30,
 						alignment: "right"
 					},
 					quantity: {
-						margin: [0, 0, 20, 0],
+						margin: [5, -50, 20, 0],
 						fontSize: 110,
 						alignment: "right"
 					}
@@ -288,14 +291,14 @@ var vm = new Vue({
 					},
 					barcode: {
 							margin: [10, -15, 0, 0],
-					},
+						},
 					name: {
-						margin: [5, -25, 10, 0],
+						margin: [0, 3, 10, 0],
 						fontSize: 15,
 						alignment: "right"
 					},
 					quantity: {
-						margin: [0, 3, 10, 0],
+						margin: [5, -25, 10, 0],
 						fontSize: 55,
 						alignment: "right"
 					}
@@ -505,7 +508,7 @@ var vm = new Vue({
 
 		print: () => {
 			if (!!window.chrome) {
-				pdfMake.createPdf(vm.labelContent).open();
+				pdfMake.createPdf(vm.labelContent).print();
 			} else {
 				pdfMake.createPdf(vm.labelContent).download('Etykiety A4.pdf');
 			}

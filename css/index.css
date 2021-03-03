@@ -6,6 +6,9 @@ body {
 .sidebar button {
 	width: 100%;
 }
+.content {
+	padding-bottom: 5rem;
+}
 
 /* for mobile */
 @media only screen and (max-width: 768px) {
@@ -28,7 +31,7 @@ body {
 	}
 	.content {
 		overflow-y: scroll;
-		padding: 1rem;
+		/* padding: 1rem; */
 	}
 
 	/* .sidebar */
