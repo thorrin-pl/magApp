@@ -19,55 +19,15 @@ var vm = new Vue({
 		zoomFactor: 1,
 		barHeight: 50,
 		labelContent: {},
-		articlesList: []
-		/*articlesList: [
-			{ ean: 2222222222222, quantity: 2.4, copies: 1, name: 'Vegetables' },
-			{ ean: 4444444444444, quantity: 2.4, copies: 1, name: 'Cheese' },
-			{ ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-			{ ean: 1234567890123, quantity: 5.987, copies: 1, name: "coś" },
-			{ ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-			{ ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      { ean: 6666666666666, quantity: 2.4, copies: 1, name: 'Whatever' },
-      
-		]*/
+		articlesList: [
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			}
+		]
 	},
 	methods: {
 		logInput: function() {
@@ -91,19 +51,6 @@ var vm = new Vue({
 			logger(`validEAN = ${this.validEAN}`);
 		},
 		inputEanLimit: function(event) {
-			// logger(`
-			// 	event.charCode = ${event.charCode}
-			// 	event.which    = ${event.which}
-			// 	event.keyCode  = ${event.keyCode}
-			// 	typeof(keyCode) = ${typeof(event.keyCode)}
-			// 	event.keyCode > 65 = ${event.keyCode > 65}
-			// 	event.keyCode < 90 = ${event.keyCode < 90}
-			// 	(event.keyCode > 65 && event.keyCode < 90) = ${(event.keyCode > 65 && event.keyCode < 90)}
-			// 	vm.eanIn.length = ${vm.eanIn.length}
-			// 	(vm.eanIn.length >= 12) = ${vm.eanIn.length > 12}
-			// 	( vm.eanIn.length >= 12 && event.keyCode >= 65 && event.keyCode <= 90 ) = ${( vm.eanIn.length >= 12 && event.keyCode >= 65 && event.keyCode <= 90 )}
-			// 	`);
-
 			if (
 				!(
 				(event.keyCode >= 48 && event.keyCode <= 57)
@@ -118,6 +65,28 @@ var vm = new Vue({
 				event.preventDefault();
 			}
 		},
+		checkOnline: function(ean) {
+			let url = 'http://api.bazaarvoice.com/data/batch.json?passkey=caPteScZRHieWdpEI1TjJ8EJJj4wAeTgrSB2F6SvXLqAA&apiversion=5.5&displaycode=17414-pl_pl&resource.q0=products&filter.q0=ean%3Aeq%3A___PRODUCTEANTOKEN___',
+			apiResults;
+
+			url = url.replace( '___PRODUCTEANTOKEN___', ean.toString() );
+			axios
+  			.get(url)
+  			.then(
+					(response) => {
+						if (response.data.BatchedResults.q0.TotalResults > 0) {
+							apiResults = response.data.BatchedResults.q0.Results[0];
+							vm.articlesList.forEach((element) => {
+								if ( element.ean == ean ) {
+									element.id = apiResults.Id;
+									element.name = apiResults.Name;
+								}
+							});
+						}
+					}
+				)
+  			.catch(error => console.log(error));
+		},
 		addArticle: function () {
 			logger('<<< start funkcji addArticle >>>');
 
@@ -125,12 +94,14 @@ var vm = new Vue({
 				let newAdd = function(q) {
 					vm.articlesList.push(
 						{
+							id: null,
 							ean: vm.eanIn,
 							quantity: q ? q : vm.quantityIn,
 							copies: 1,
 							name: vm.nameIn
 						});
 					vm.scrollToEnd();
+					vm.checkOnline(vm.eanIn);
 				}
 
 				if ( vm.howAdding != 'noAdd' ) {
@@ -171,12 +142,14 @@ var vm = new Vue({
 
 		// KOPIUJ - WKLEJ !!!
 
-		getLabels: function() {
-			let labels = [];
+		getLabels: function(lenghtStr = 0) {
+			let labels = [],
+				nameStr = "";
 
 			vm.articlesList.forEach( (item) => {
 				for (let i = 1; i <= item.copies; i++){
 					barcode.setEan = item.ean;
+					nameStr = lenghtStr > 0 ? item.name.slice(0, lenghtStr) : item.name;
 					labels.push([
 						{
 							text: item.ean.toString().slice(0, 9),
@@ -196,16 +169,24 @@ var vm = new Vue({
 								},
 								[
 									{
+										text: "OBI: " + item.id,
+										style: "id"
+									},
+									{
 										text: (numPL(item.quantity) + " j"),
 										style: "quantity",
 										width: "*"
-									},
-									{
-										text: item.name,
-										style: "name"
 									}
 								]
 							]
+						},
+						{
+							// text: item.name ? item.name.slice(0, 40) : '.',
+							// text: item.name ? item.name : '.',
+							text: nameStr,
+							style: "name",
+							width: 10,
+							height: 5
 						}
 					]);
 				}
@@ -231,7 +212,7 @@ var vm = new Vue({
 					},
 					ean2: {
 						margin: [0, -40, 0, 0],
-						fontSize: 280,
+						fontSize: 250,
 						bold: true,
 						alignment: "center"
 					},
@@ -239,13 +220,18 @@ var vm = new Vue({
 						margin: [20, -30, 0, 0]
 					},
 					name: {
-						margin: [0, 0, 20, 0],
-						fontSize: 30,
-						alignment: "right"
+						margin: [20, 0, 20, 0],
+						fontSize: 40,
+						alignment: "left"
 					},
 					quantity: {
-						margin: [5, -50, 20, 0],
+						margin: [0, 0, 20, 0],
 						fontSize: 110,
+						alignment: "right"
+					},
+					id: {
+						margin: [20, -40, 20, 0],
+						fontSize: 30,
 						alignment: "right"
 					}
 				},
@@ -259,7 +245,7 @@ var vm = new Vue({
 		printLabelsA6: function() {
 
 			barcode.zoom = 1.5;
-			barcode.height = 0;
+			barcode.height = 60;
 
 			let labels = vm.getLabels(),
 					column0 = [],
@@ -285,22 +271,27 @@ var vm = new Vue({
 					},
 					ean2: {
 						margin: [0, -20, 0, 0],
-						fontSize: 143, 
+						fontSize: 135, 
 						bold: true,
 						alignment: "center"
 					},
 					barcode: {
 							margin: [10, -15, 0, 0],
-						},
-					name: {
-						margin: [0, 3, 10, 0],
+					},
+					id: {
+						margin: [20, -20, 20, 0],
 						fontSize: 15,
 						alignment: "right"
 					},
 					quantity: {
-						margin: [5, -25, 10, 0],
-						fontSize: 55,
+						margin: [0, 0, 10, 0],
+						fontSize: 50,
 						alignment: "right"
+					},
+					name: {
+							margin: [10, -10, 10, 0],
+						fontSize: 20,
+						alignment: "left"
 					}
 				},
 				defaultStyle: {},
@@ -502,7 +493,7 @@ var vm = new Vue({
 				}
 		
 			}
-		
+		console.log(vm.labelContent)
 			vm.print();
 		},
 

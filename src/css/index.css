@@ -118,6 +118,7 @@ body {
 	padding: 0;
 	border: 0;
 }
+/* lp */
 .table-articles-list tr th:nth-of-type(1),
 .table-articles-list tr td:nth-of-type(1) {
 	width: 2ch;
@@ -125,47 +126,61 @@ body {
 .table-articles-list tr td:nth-of-type(1) {
 	text-align: right;
 }
+/* OBIk */
 .table-articles-list tr th:nth-of-type(2),
 .table-articles-list tr td:nth-of-type(2) {
-	width: 11ch;
+	width: 6ch;
 }
 .table-articles-list tr td:nth-of-type(2) {
 	text-align: right;
 }
+/* nazwa */
 .table-articles-list tr th:nth-of-type(3),
 .table-articles-list tr td:nth-of-type(3) {
-	width: 8ch;
+	width: auto;
 }
 .table-articles-list tr td:nth-of-type(3) input {
-	text-align: right;
+	text-indent: 2ch;
+	text-align: left;
 }
+/* ean */
 .table-articles-list tr th:nth-of-type(4),
 .table-articles-list tr td:nth-of-type(4) {
-	width: auto;
-	min-width: 5ch;
+	width: 8ch;
 }
 .table-articles-list tr td:nth-of-type(4) input {
-	text-indent: 2ch;
-}
-.table-articles-list tr th:nth-of-type(5),
-.table-articles-list tr td:nth-of-type(5) {
-	width: 4ch;
-}
-.table-articles-list tr td:nth-of-type(5) input {
 	text-align: right;
 }
+/* ilość */
+.table-articles-list tr th:nth-of-type(5),
+.table-articles-list tr td:nth-of-type(5) {
+	width: 6ch;
+}
+.table-articles-list tr td:nth-of-type(5) input {
+	/* text-indent: 2ch; */
+	text-align: right;
+}
+/* kopie */
 .table-articles-list tr th:nth-of-type(6),
 .table-articles-list tr td:nth-of-type(6) {
+	width: 4ch;
+}
+.table-articles-list tr td:nth-of-type(6) input {
+	text-align: right;
+}
+/* usuń */
+.table-articles-list tr th:nth-of-type(7),
+.table-articles-list tr td:nth-of-type(7) {
 	width: 5ch;
 }
-.table-articles-list tr td:nth-of-type(6) {
+.table-articles-list tr td:nth-of-type(7) {
 	text-align: center;
 }
-.table-articles-list tr td:nth-of-type(6) i {
+.table-articles-list tr td:nth-of-type(7) i {
 	vertical-align: bottom;
 	cursor: pointer;
 }
-.table-articles-list tr td:nth-of-type(6) i:hover {
+.table-articles-list tr td:nth-of-type(7) i:hover {
 	color: red;
 }
 

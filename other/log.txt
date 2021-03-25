@@ -1,0 +1,66 @@
+index.html:14 GET file://fonts.googleapis.com/css?family=Raleway:400,300,600 net::ERR_INVALID_URL
+vue-dev.js:9055 Download the Vue Devtools extension for a better development experience:
+https://github.com/vuejs/vue-devtools
+vue-dev.js:9064 You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.
+See more tips at https://vuejs.org/guide/deployment.html
+DevTools failed to load SourceMap: Could not load content for file:///home/thorrin/dev_javascript/MagAppVue/js/axios.min.map: System error: net::ERR_FILE_NOT_FOUND
+types.js:243 [Deprecation] SharedArrayBuffer will require cross-origin isolation as of M91, around May 2021. See https://developer.ch40me.qjz9zk/blog/enabling-shared-array-buffer/ for more details.
+55955 @ types.js:243
+__webpack_require__ @ bootstrap:18
+89539 @ util.js:467
+__webpack_require__ @ bootstrap:18
+25961 @ assertion_error.js:35
+__webpack_require__ @ bootstrap:18
+69282 @ assert.js:36
+__webpack_require__ @ bootstrap:18
+74505 @ binding.js:4
+__webpack_require__ @ bootstrap:18
+42635 @ index.js:5
+__webpack_require__ @ bootstrap:18
+73973 @ pdfmake.js:10632
+__webpack_require__ @ bootstrap:18
+73126 @ index.js:21
+__webpack_require__ @ bootstrap:18
+55792 @ pdfMake.js:1
+__webpack_require__ @ bootstrap:18
+4911 @ pdfMake-exposed.js:1
+__webpack_require__ @ bootstrap:18
+(anonymous) @ startup:4
+(anonymous) @ startup:4
+webpackUniversalModuleDefinition @ universalModuleDefinition:7
+(anonymous) @ universalModuleDefinition:10
+barcode.setEan
+undefined
+barcode.setEan = 5906365568313
+5906365568313
+barcode.getBinary
+(113) [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, …]
+barcode.getSvg
+"
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 113 50"
+			preserveAspectRatio="none"
+		>
+			<g 
+				fill="none" 
+				stroke="black" 
+			>
+				<path 
+					stroke-width="50"
+					stroke-dasharray="0,11,1,1,1,3,1,1,2,1,1,2,3,4,1,1,1,1,4,1,1,1,1,1,4,1,3,2,1,1,1,1,1,1,1,2,3,1,1,1,1,4,1,2,1,3,1,4,1,1,2,2,2,1,1,4,1,1,1,1,1,7" 
+						d="M0 25 L113 25" 
+				/>
+				<path 
+					stroke-width="7"
+					stroke-dasharray="0,11,1,1,1,43,1,1,1,43,1,1,1,7"
+					d="M0 52 L113 52" 
+				/>
+			</g>
+			<text x="0" y="60" font-size="12" font-family="arial">
+				<tspan x="0">5</tspan>
+				<tspan x="15" textLength="42">906365</tspan>
+				<tspan x="61" textLength="42">568313</tspan>
+			</text>
+		</svg>"
