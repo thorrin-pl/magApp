@@ -1,5 +1,21 @@
 function logger(str) { console.log(str); }
 
+var scanedBarcode = '';
+document.addEventListener("keydown", function(e) {
+	let patt = new RegExp("r[0-9]{13}");
+	scanedBarcode += e.key;
+	if (scanedBarcode[0] === 'r') {
+		if (patt.test(scanedBarcode)) {
+			vm.eanIn = scanedBarcode.slice(1,14);
+			vm.checkValidEAN();
+			scanedBarcode = '';
+			e.preventDefault();
+		}
+	} else {
+		scanedBarcode = '';
+	}
+});
+
 var numPL = function(vaule) {
 	if (!vaule) return '';
 	vaule = vaule.toString();
@@ -229,10 +245,10 @@ var vm = new Vue({
 		checkValidEAN: function () {
 			barcode.setEan = this.eanIn;
 			if (barcode.isValid) {
-				this.validEAN= true;
+				this.validEAN = true;
 				if (this.eanIn.length === 13) {
-					this.$refs.inputQuantity.focus();
 					if (this.howAdding === 'addOne') this.addArticle();
+					this.$refs.inputQuantity.focus();
 				}
 			} else {
 				this.validEAN = false;
@@ -254,30 +270,85 @@ var vm = new Vue({
 				event.preventDefault();
 			}
 		},
-		checkOnline: function(ean) {
-			let url = 'https://api.bazaarvoice.com/data/batch.json?passkey=caPteScZRHieWdpEI1TjJ8EJJj4wAeTgrSB2F6SvXLqAA&apiversion=5.5&displaycode=17414-pl_pl&resource.q0=products&filter.q0=ean%3Aeq%3A___PRODUCTEANTOKEN___',
+		checkOnline: function(num, type = 'ean') {
+			let url = 'https://api.bazaarvoice.com/data/batch.json?passkey=caPteScZRHieWdpEI1TjJ8EJJj4wAeTgrSB2F6SvXLqAA&apiversion=5.5&displaycode=17414-pl_pl&resource.q0=products&filter.q0=',
 			apiResults;
-
-			url = url.replace( '___PRODUCTEANTOKEN___', ean.toString() );
-			axios
-  			.get(url)
-  			.then(
-					(response) => {
-						if (response.data.BatchedResults.q0.TotalResults > 0) {
-							apiResults = response.data.BatchedResults.q0.Results[0];
-							vm.articlesList.forEach((element) => {
-								if ( element.ean == ean ) {
-									element.id = apiResults.Id;
-									element.name = apiResults.Name;
-								}
-							});
+			if (type === 'ean') {
+				url += 'ean%3Aeq%3A' + num.toString();
+				// url = url.replace( '___PRODUCTEANTOKEN___', num.toString() );
+				axios
+				  .get(url)
+				  .then(
+						(response) => {
+							if (response.data.BatchedResults.q0.TotalResults > 0) {
+								apiResults = response.data.BatchedResults.q0.Results[0];
+								vm.articlesList.forEach((element) => {
+									if ( element.ean == num ) {
+										element.id = apiResults.Id;
+										element.name = apiResults.Name;
+									}
+								});
+							}
 						}
-					}
-				)
-  			.catch(error => console.log(error));
+					)
+				  .catch(error => console.log(error));
+			} else if (type === 'id') {
+				url += 'id%3Aeq%3A' + num.toString();
+				axios
+				  .get(url)
+				  .then(
+						(response) => {
+							if (response.data.BatchedResults.q0.TotalResults > 0) {
+								apiResults = response.data.BatchedResults.q0.Results[0];
+								vm.articlesList.forEach((element) => {
+									if ( element.id == num ) {
+										element.ean = apiResults.EANs[0];
+										element.name = apiResults.Name;
+									}
+								});
+							}
+						}
+					)
+				  .catch(error => console.log(error));
+			}
 		},
 		addArticle: function () {
 			logger('<<< start funkcji addArticle >>>');
+
+			if ((this.eanIn.length === 7 || this.eanIn.length === 6) && (vm.quantityIn <= 0)) {
+				return vm.$refs.inputQuantity.focus();
+			} 
+			if ((this.eanIn.length === 7 || this.eanIn.length === 6) && (vm.quantityIn > 0)) {
+				let newAdd = function(q) {
+					vm.articlesList.push(
+						{
+							id: vm.eanIn,
+							ean: '',
+							quantity: q ? q : vm.quantityIn,
+							copies: 1,
+							name: ''
+						});
+					vm.scrollToEnd();
+					vm.checkOnline(vm.eanIn, 'id');
+				}
+				if ( vm.howAdding != 'noAdd' ) {
+					// Czy istnieje już taki artykuł
+					let i = -1;
+					vm.articlesList.forEach((element, index) => {
+						logger('start forEach dla articlesList');
+						if ( element.id == vm.eanIn ) {
+							i = index;
+							logger(`Istnieje na liście, index = ${index}`);
+						}
+					});
+
+					if ( i > -1 ) { // jeżeli istnieje
+						vm.articlesList[i].quantity += vm.howAdding == 'addEntered' ? vm.quantityIn : 1;
+					} else { // jeżeli nie istnieje
+						newAdd( vm.howAdding == 'addOne' ? 1 : null );
+					}
+				} else newAdd(); // bez dodawania
+			}
 
 			if (this.validEAN) {
 				let newAdd = function(q) {

@@ -1,0 +1,74 @@
+{
+  "Errors": [],
+  "BatchedResultsOrder": ["q0"],
+  "HasErrors": false,
+  "TotalRequests": 1,
+  "BatchedResults": {
+    "q0": {
+      "Id": "q0",
+      "Limit": 10,
+      "Offset": 0,
+      "TotalResults": 1,
+      "Locale": "pl_PL",
+      "Results": [
+        {
+          "FamilyIds": ["PL0210548943"],
+          "EANs": ["5902768214666", "5902768214857"],
+          "AttributesOrder": [
+            "node_0_bv",
+            "node_1_bv",
+            "BV_FE_EXPAND",
+            "node_2_bv",
+            "BV_FE_FAMILY"
+          ],
+          "Attributes": {
+            "node_0_bv": {
+              "Id": "node_0_bv",
+              "Values": [{ "Value": "Technika", "Locale": null }]
+            },
+            "node_1_bv": {
+              "Id": "node_1_bv",
+              "Values": [{ "Value": "Kominki i piece", "Locale": null }]
+            },
+            "BV_FE_EXPAND": {
+              "Id": "BV_FE_EXPAND",
+              "Values": [
+                { "Value": "BV_FE_FAMILY:PL0210548943", "Locale": null }
+              ]
+            },
+            "node_2_bv": {
+              "Id": "node_2_bv",
+              "Values": [{ "Value": "Paliwa", "Locale": null }]
+            },
+            "BV_FE_FAMILY": {
+              "Id": "BV_FE_FAMILY",
+              "Values": [{ "Value": "PL0210548943", "Locale": null }]
+            }
+          },
+          "Description": "Brykiet drzewny RUF w 10-kilogramowj paczce to wysokokaloryczny materia\u0142 opa\u0142owy nowej generacji, wykonany z rozdrobnionych, czystych trocin (brzoza, sosna). W procesie produkcji trociny ulegaj\u0105 sprasowaniu pod wysokim ci\u015Bnieniem, bez dodatku substancji klej\u0105cych. Doskona\u0142y do palenia w kominkach i piecach kominkowych. Dzi\u0119ki powolnemu spalaniu jest bardzo dobrym rozwi\u0105zaniem do piec\u00F3w centralnego ogrzewania oraz mniejszych kot\u0142owni.",
+          "ImageUrl": "https://images.obi.pl/product/PL/415x415/661987_1.jpg",
+          "Name": "Brykiet drzewny RUF 18 MJ 10 kg",
+          "Id": "6619878",
+          "CategoryId": "214",
+          "Active": true,
+          "ProductPageUrl": "https://www.obi.pl/paliwa/brykiet-drzewny-ruf-18-mj-10-kg/p/6619878",
+          "Disabled": false,
+          "QuestionIds": [],
+          "ISBNs": [],
+          "StoryIds": [],
+          "ModelNumbers": [],
+          "Brand": {},
+          "BrandExternalId": null,
+          "ManufacturerPartNumbers": [],
+          "ReviewIds": [],
+          "UPCs": []
+        }
+      ],
+      "Includes": {},
+      "HasErrors": false,
+      "Errors": []
+    }
+  },
+  "SuccessfulRequests": 1,
+  "FailedRequests": 0
+}
