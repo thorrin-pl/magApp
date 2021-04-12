@@ -428,6 +428,7 @@ var vm = new Vue({
 						style: 'mtHeader'
 					},
 					{
+						text: 'OBI',
 						text: 'EAN',
 						style: 'mtHeader'
 					},
@@ -449,7 +450,7 @@ var vm = new Vue({
 							style: 'mtCellLp'
 						},
 						{
-							text: art.name.slice(0, 31),
+							text: art.name.slice(0, 39),
 							style: 'mtCell'
 						},
 						{
@@ -457,6 +458,7 @@ var vm = new Vue({
 							style: 'mtCellQuan'
 						},
 						{
+							text: art.id,
 							text: art.ean,
 							style: 'mtCell'
 						},
