@@ -181,9 +181,9 @@ var vm = new Vue({
 							]
 						},
 						{
-							// text: item.name ? item.name.slice(0, 40) : '.',
+							text: item.name ? item.name.slice(0, lenghtStr - 1) : '.',
 							// text: item.name ? item.name : '.',
-							text: nameStr,
+							// text: nameStr,
 							style: "name",
 							width: 10,
 							height: 5
@@ -236,7 +236,7 @@ var vm = new Vue({
 					}
 				},
 				defaultStyle: {},
-				content: vm.getLabels()
+				content: vm.getLabels(32)
 			}
 
 			vm.print();
@@ -247,7 +247,7 @@ var vm = new Vue({
 			barcode.zoom = 1.5;
 			barcode.height = 60;
 
-			let labels = vm.getLabels(),
+			let labels = vm.getLabels(32),
 					column0 = [],
 					column1 = [];
 		
@@ -449,7 +449,7 @@ var vm = new Vue({
 							style: 'mtCellLp'
 						},
 						{
-							text: art.name,
+							text: art.name.slice(0, 47),
 							style: 'mtCell'
 						},
 						{
