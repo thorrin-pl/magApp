@@ -26,6 +26,195 @@ var vm = new Vue({
 				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
 				quantity: 2.4,
 				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
+			},
+			{
+				id: 6619878,
+				ean: 5902768214666,
+				name: 'QWERTYUIOP ASDFGHJKL ZXCVBNM QWERTYUIOP ASDFGHJKL ZXCVBNM',
+				quantity: 2.4,
+				copies: 1
 			}
 		]
 	},
@@ -66,7 +255,7 @@ var vm = new Vue({
 			}
 		},
 		checkOnline: function(ean) {
-			let url = 'http://api.bazaarvoice.com/data/batch.json?passkey=caPteScZRHieWdpEI1TjJ8EJJj4wAeTgrSB2F6SvXLqAA&apiversion=5.5&displaycode=17414-pl_pl&resource.q0=products&filter.q0=ean%3Aeq%3A___PRODUCTEANTOKEN___',
+			let url = 'https://api.bazaarvoice.com/data/batch.json?passkey=caPteScZRHieWdpEI1TjJ8EJJj4wAeTgrSB2F6SvXLqAA&apiversion=5.5&displaycode=17414-pl_pl&resource.q0=products&filter.q0=ean%3Aeq%3A___PRODUCTEANTOKEN___',
 			apiResults;
 
 			url = url.replace( '___PRODUCTEANTOKEN___', ean.toString() );
@@ -310,7 +499,7 @@ var vm = new Vue({
 
 		printList: function() {
 			barcode.zoom = 1;
-			barcode.height = 24;
+			barcode.height = 38;
 
 			let dateTime = () => {
 				let now = new Date;
@@ -409,31 +598,30 @@ var vm = new Vue({
 				pdfContent = [],
 				items = vm.articlesList.length,
 				p = 0,
-				itemsOnPage = 20;
+				itemsOnPage = 14;
 		
 			while (p < items) {
 				pdfContent = [];
 		
 				pdfContent.push([
 					{
-						text: 'lp.',
+						text: '\nlp.',
 						style: 'mtHeaderLp'
 					},
 					{
-						text: '',
+						text: '\nNazwa',
 						style: 'mtHeader'
 					},
 					{
-						text: 'Ilość',
+						text: '\nIlość',
 						style: 'mtHeader'
 					},
 					{
-						text: 'OBI',
-						text: 'EAN',
+						text: 'OBI\nEAN',
 						style: 'mtHeader'
 					},
 					{
-						text: '',
+						text: '\n[kod kreskowy]',
 						style: 'mtHeader'
 					}
 				]);
@@ -450,7 +638,7 @@ var vm = new Vue({
 							style: 'mtCellLp'
 						},
 						{
-							text: art.name.slice(0, 39),
+							text: art.name.slice(0, 41),
 							style: 'mtCell'
 						},
 						{
@@ -458,8 +646,7 @@ var vm = new Vue({
 							style: 'mtCellQuan'
 						},
 						{
-							text: art.id,
-							text: art.ean,
+							text: art.id + '\n' + art.ean,
 							style: 'mtCell'
 						},
 						{
