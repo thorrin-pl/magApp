@@ -449,7 +449,7 @@ var vm = new Vue({
 							style: 'mtCellLp'
 						},
 						{
-							text: art.name.slice(0, 47),
+							text: art.name.slice(0, 31),
 							style: 'mtCell'
 						},
 						{
