@@ -42,9 +42,9 @@ var vm = new Vue({
 			logger(this.articlesList);
 		},
 		scrollToEnd: function() {    	
-      let container = this.$el.querySelector(".content");
-      container.scrollTop = container.scrollHeight;
-    },
+     		let container = this.$el.querySelector(".content");
+      		container.scrollTop = container.scrollHeight;
+    	},
 		checkValidEAN: function () {
 			barcode.setEan = this.eanIn;
 			if (barcode.isValid) {
@@ -58,20 +58,22 @@ var vm = new Vue({
 			}
 			logger(`validEAN = ${this.validEAN}`);
 		},
-		inputEanLimit: function(event) {
+		inputEanLimit: function(e) {
 			if (
-				!(
-				(event.keyCode >= 48 && event.keyCode <= 57)
-				||
-				(event.keyCode >= 96 && event.keyCode <= 105)
-				||
-				(event.keyCode >= 37 && event.keyCode <= 40)
-				||
-				event.keyCode == 8 || event.keyCode <= 46
-				)
+				// Allow: backspace, delete, tab, escape, enter
+				e.keyCode == 46 || e.keyCode == 8 || e.keyCode == 9 || e.keyCode == 27 || e.keyCode == 13 || e.keyCode == 110 ||
+			  // Allow: Ctrl+A,Ctrl+C,Ctrl+V, Command+A
+			  ((e.keyCode == 65 || e.keyCode == 86 || e.keyCode == 67) && (e.ctrlKey === true || e.metaKey === true)) ||
+			  // Allow: home, end, left, right, down, up
+			  (e.keyCode >= 35 && e.keyCode <= 40)
 			) {
-				event.preventDefault();
+				// let it happen, don't do anything
+				return;
 			}
+			// Ensure that it is a number and stop the keypress
+			if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+			   e.preventDefault();
+			 }
 		},
 		checkOnline: function(num, type = 'ean') {
 			let url = 'https://api.bazaarvoice.com/data/batch.json?passkey=caPteScZRHieWdpEI1TjJ8EJJj4wAeTgrSB2F6SvXLqAA&apiversion=5.5&displaycode=17414-pl_pl&resource.q0=products&filter.q0=',
@@ -132,7 +134,9 @@ var vm = new Vue({
 							name: ''
 						});
 					vm.scrollToEnd();
-					vm.checkOnline(vm.eanIn, 'id');
+					if (vm.onlineData) {
+						vm.checkOnline(vm.eanIn, 'id');
+					}
 				}
 				if ( vm.howAdding != 'noAdd' ) {
 					// Czy istnieje już taki artykuł
@@ -164,7 +168,9 @@ var vm = new Vue({
 							name: vm.nameIn
 						});
 					vm.scrollToEnd();
-					vm.checkOnline(vm.eanIn);
+					if (vm.onlineData) {
+						vm.checkOnline(vm.eanIn);
+					}
 				}
 
 				if ( vm.howAdding != 'noAdd' ) {

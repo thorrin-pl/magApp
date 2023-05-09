@@ -9,7 +9,22 @@ body {
 .content {
 	padding-bottom: 5rem;
 }
-
+.cbox {
+	width: 246px !important;
+	border: red 2px solid;
+}
+.cbox input {
+	display: inline-block;
+	width: auto;
+	margin: 5px;
+}
+.cbox label {
+	display: inline-block;
+}
+.cbox span {
+	display: inline-block;
+	font-weight: bold;
+}
 /* for mobile */
 @media only screen and (max-width: 768px) {
 	/* GRID */
