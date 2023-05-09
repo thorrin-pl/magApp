@@ -84,6 +84,11 @@
 
 				<button v-on:click="printList()">Lista zbiorcza</button>
 			</div>
+			<div class="cbox">
+				<input class="u-pull-left" type="checkbox" v-model="onlineData" id="daneOnline">
+				<label for="daneOnline" class="u-pull-left">Pobieranie danych z obi.pl</label>
+				<span>[ FUNKCJA TESTOWA, POBRANE DANE MOGĄ BYĆ BŁĘDNE !!! ]</span>
+			</div>
 		</div>
 
 		<div class="content">
